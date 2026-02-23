@@ -231,6 +231,43 @@
       .wa-cta-box .wa-number { font-size: 1.1rem; }
       .btn-wa-article { font-size: 0.8rem; padding: 10px 14px; }
     }
+    .toc-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:24px}
+    .toc-toggle{width:100%;background:none;border:none;padding:15px 20px;font-family:inherit;font-weight:700;font-size:.92rem;color:var(--bg-dark);cursor:pointer;display:flex;align-items:center;transition:background .2s}
+    .toc-toggle:hover{background:rgba(19,236,91,.06)}
+    .toc-chevron{transition:transform .3s;font-size:.75rem;margin-left:auto}
+    .toc-chevron.rotated{transform:rotate(-180deg)}
+    .toc-list{list-style:none;padding:0 20px 16px;margin:0;border-top:1px solid #e2e8f0}
+    .toc-list li{padding:4px 0}
+    .toc-list a{color:#475569;font-size:.85rem;text-decoration:none;transition:color .2s}
+    .toc-list a:hover{color:var(--primary-dark)}
+    .blockquote-custom{border-left:4px solid var(--primary);background:rgba(19,236,91,.06);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0}
+    .blockquote-custom p{font-size:1.05rem;font-style:italic;color:var(--bg-dark);margin-bottom:8px}
+    .blockquote-custom footer{font-size:.82rem;color:#64748b;font-weight:700}
+    .baca-juga-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin:24px 0}
+    .baca-juga-label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.07em;color:var(--primary-dark);margin-bottom:10px}
+    .baca-juga-box a{display:block;color:#334155;font-size:.88rem;padding:4px 0;text-decoration:none;transition:color .2s}
+    .baca-juga-box a:hover{color:var(--primary-dark)}
+    .faq-item{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:10px}
+    .faq-question{width:100%;background:none;border:none;text-align:left;padding:15px 18px;font-family:inherit;font-weight:700;font-size:.92rem;color:#1e293b;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s}
+    .faq-question:hover{background:var(--bg-light)}
+    .faq-icon{font-size:.75rem;transition:transform .3s;flex-shrink:0}
+    .faq-icon.rotated{transform:rotate(-180deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 18px;font-size:.9rem;color:#475569;line-height:1.7}
+    .faq-answer.open{max-height:300px;padding:12px 18px 16px}
+    .share-section{border-top:1px solid #e2e8f0;padding-top:20px;margin-top:24px}
+    .btn-share{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+    .btn-share:hover{opacity:.82}
+    .btn-share-fb{background:#1877f2;color:#fff}
+    .btn-share-tw{background:#000;color:#fff}
+    .btn-share-wa{background:#25d366;color:#fff}
+    .btn-share-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+    .related-card-full{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:14px}
+    .related-thumb-full{width:100%;height:120px;object-fit:cover;display:block}
+    .related-card-full .related-badge{display:inline-block;margin:10px 14px 5px;background:rgba(19,236,91,.1);border:1px solid rgba(19,236,91,.3);color:var(--primary-dark);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+    .related-title-full{font-weight:700;font-size:.87rem;color:#1e293b;padding:0 14px;margin-bottom:6px;line-height:1.4}
+    .related-card-full p{padding:0 14px;font-size:.82rem;color:#64748b}
+    .btn-related-read{display:inline-flex;align-items:center;gap:6px;margin:4px 14px 12px;font-size:.78rem;font-weight:700;color:var(--primary-dark);text-decoration:none;transition:gap .2s}
+    .btn-related-read:hover{gap:10px;color:var(--bg-dark)}
   </style>
 </head>
 <body>
@@ -251,10 +288,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#destinations">Destinations</a></li>
           <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          <li class="nav-item ms-md-3 mt-2 mt-md-0">
-            <a href="https://wa.me/6282211221909" class="btn btn-book-now px-4 py-2 rounded-3">Book Now</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#cta">Hubungi Kami</a></li>
         </ul>
       </div>
     </div>
@@ -288,6 +322,21 @@
 
         <div class="col-lg-8">
 
+          <!-- TOC -->
+          <div class="toc-box">
+            <button class="toc-toggle" onclick="toggleTOC()" id="tocBtn">
+              <i class="fa-solid fa-list me-2"></i> Daftar Isi
+              <i class="fa-solid fa-chevron-down toc-chevron" id="tocChevron"></i>
+            </button>
+            <ul class="toc-list" id="tocList">
+              <li><a href="#sec-kepekaan">1. Kepekaan dan Pendekatan yang Tepat</a></li>
+              <li><a href="#sec-fasilitator">2. Fasilitator yang Penuh Kasih</a></li>
+              <li><a href="#sec-aktivitas">3. Pilihan Aktivitas Outbound</a></li>
+              <li><a href="#sec-faq">4. FAQ</a></li>
+              <li><a href="#sec-kesimpulan">5. Kesimpulan</a></li>
+            </ul>
+          </div>
+
           <div class="wa-cta-box">
             <div>
               <p class="mb-1 fw-bold fs-6"><i class="fa-brands fa-whatsapp me-2"></i> Hubungi Kami Sekarang</p>
@@ -300,25 +349,20 @@
           </div>
 
           <article class="article-body">
-            <p>
-              Menyalurkan dana Corporate Social Responsibility (CSR) perusahaan atau sedekah komunitas tidak melulu harus dalam bentuk sembako atau santunan tunai di dalam panti asuhan. Memberikan mereka pengalaman berlibur dan bermain di alam bebas adalah bentuk hadiah psikologis yang sangat membekas di hati anak-anak. Menyelenggarakan kegiatan sosial melalui <strong>paket outbound anak yatim di batu</strong> menawarkan ruang bagi mereka untuk tertawa lepas, mengekspresikan diri, dan membangun rasa percaya diri di lingkungan yang asri dan sejuk.
-            </p>
+            <p>Menyalurkan dana CSR perusahaan atau sedekah komunitas tidak melulu harus dalam bentuk sembako. Memberikan anak-anak yatim pengalaman berlibur dan bermain di alam bebas adalah hadiah psikologis yang sangat membekas. <strong>Paket outbound anak yatim di Batu</strong> dari Gemilang Katun Outbound menawarkan ruang bagi mereka untuk tertawa lepas, mengekspresikan diri, dan membangun rasa percaya diri di lingkungan sejuk pegunungan Batu Malang.</p>
 
-            <h2>Kepekaan dan Pendekatan yang Tepat</h2>
-            <p>
-              Menghadapi peserta anak-anak dengan latar belakang emosional yang khusus tentu membutuhkan tingkat kepekaan yang jauh lebih tinggi. Instruktur lapangan tidak bisa menggunakan gaya bahasa yang keras atau terlalu kompetitif. Dalam pelaksanaan <strong>paket outbound anak yatim di batu</strong>, pemilihan lokasi juga sangat krusial.
-            </p>
-            <p>
-              Kami biasanya memilih kawasan agrowisata petik apel di Bumiaji atau taman bunga yang kontur tanahnya datar dan jauh dari jurang. Aktivitasnya difokuskan pada fun games yang mengedepankan kerja sama, kasih sayang, dan edukasi ringan tentang alam, seperti menanam bibit pohon atau menangkap ikan di kolam dangkal.
-            </p>
+            <h2 id="sec-kepekaan">Kepekaan dan Pendekatan yang Tepat</h2>
+            <p>Menghadapi peserta anak-anak dengan latar belakang emosional yang khusus membutuhkan kepekaan tinggi. Instruktur kami tidak menggunakan gaya bahasa keras atau terlalu kompetitif. Dalam <strong>paket outbound anak yatim di Batu</strong>, pemilihan lokasi sangat krusial — kami memilih kawasan agrowisata petik apel di Bumiaji atau taman bunga dengan kontur datar yang aman bagi anak-anak.</p>
+            <p>Aktivitas difokuskan pada fun games kolaboratif: kerja sama tim, edukasi alam (menanam bibit pohon), dan bermain air di kolam dangkal yang aman. Setiap anak mendapat perhatian individual dari fasilitator.</p>
 
-            <h2>Fasilitator yang Penuh Kasih dari Gemilang Katun Outbound</h2>
-            <p>
-              Tim fasilitator dari Gemilang Katun Outbound telah dilatih secara khusus untuk mendampingi kelompok anak usia dini dan remaja dengan pendekatan yang sangat ngemong (mengayomi). Kami merangkul mereka layaknya adik sendiri.
-            </p>
-            <p>
-              Gemilang Katun Outbound juga memastikan seluruh fasilitas pendukung seperti:
-            </p>
+            <blockquote class="blockquote-custom">
+              <p>"Melihat mereka tertawa dan berlari bebas di alam terbuka — itulah momen terbaik yang bisa Anda hadiahkan untuk anak-anak yatim."</p>
+              <footer>— Wildan, Fasilitator Senior Gemilang Katun Outbound</footer>
+            </blockquote>
+
+            <h2 id="sec-fasilitator">Fasilitator Penuh Kasih dari Gemilang Katun</h2>
+            <p>Tim fasilitator kami dilatih khusus untuk mendampingi kelompok anak usia dini dan remaja dengan pendekatan ngemong (mengayomi). Kami merangkul mereka layaknya adik sendiri. Setiap sesi diawali dengan ice breaking emosional untuk memastikan semua anak merasa aman dan nyaman.</p>
+            <p>Fasilitas yang kami sediakan:</p>
             <ul style="line-height:2;">
               <li><strong>Armada transportasi</strong> penjemputan dari panti asuhan</li>
               <li><strong>Menu makanan bernutrisi</strong> yang disukai anak-anak</li>
@@ -326,14 +370,51 @@
               <li><strong>Dokumentasi foto &amp; video</strong> kenangan hari spesial mereka</li>
               <li><strong>Perlengkapan P3K</strong> dan tim medis siaga di lapangan</li>
             </ul>
-            <p>
-              Para donatur atau perwakilan perusahaan bisa langsung berbaur dan bermain bersama mereka tanpa ada sekat pembatas.
-            </p>
 
-            <h2>Investasi Akhirat yang Tak Ternilai</h2>
-            <p>
-              Senyum ceria dari wajah anak-anak tersebut adalah investasi akhirat dan kepuasan batin yang tak ternilai harganya. Mari wujudkan niat baik Anda dengan cara yang lebih membahagiakan. Konsultasikan jumlah peserta dan jadwal donasi Anda, lalu pilih <strong>paket outbound anak yatim di batu</strong> yang kami kelola dengan penuh dedikasi dan cinta kasih.
-            </p>
+            <h2 id="sec-aktivitas">Pilihan Aktivitas Outbound untuk Anak Yatim</h2>
+            <p>Kami menyesuaikan jenis aktivitas dengan usia dan kondisi peserta:</p>
+            <ul style="line-height:2;">
+              <li><strong>Usia 5–10 tahun:</strong> Games gerak dan warna, outbound mini, mewarnai topi, fun cooking sederhana</li>
+              <li><strong>Usia 11–15 tahun:</strong> Flying fox rendah, jembatan gantung, paintball (peluru cat aman), teamwork challenges</li>
+              <li><strong>Usia 16–18 tahun:</strong> Leadership games, outbound tracking, forum berbagi cita-cita</li>
+            </ul>
+            <p>Para donatur atau perwakilan perusahaan bisa langsung berbaur dan bermain bersama anak-anak tanpa sekat.</p>
+
+            <!-- Baca Juga -->
+            <div class="baca-juga-box">
+              <p class="baca-juga-label"><i class="fa-solid fa-book-open me-2"></i>Baca Juga</p>
+              <a href="artikel1.html">→ EO Gathering Reuni Sekolah di Malang yang Berkesan</a>
+              <a href="artikel3.html">→ Lokasi Fun Offroad Ramah Anak di Batu Malang</a>
+              <a href="artikel5.html">→ Paket Gathering Pantai Goa China Malang</a>
+            </div>
+
+            <h2 id="sec-faq">FAQ — Paket Outbound Anak Yatim di Batu</h2>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Berapa biaya paket outbound anak yatim di Batu? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Mulai Rp 2.500.000 untuk 20–30 peserta (paket basic) hingga Rp 12.000.000+ (paket premium dengan makan, transportasi &amp; dokumentasi). Hubungi kami di <strong>0822-1122-1909</strong> untuk penawaran khusus donasi CSR.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Apakah bisa kerjasama donasi perusahaan? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Ya, kami melayani kerjasama program CSR perusahaan. Kami bantu dari perencanaan acara, koordinasi dengan panti asuhan, hingga laporan kegiatan lengkap dengan foto &amp; video untuk keperluan dokumentasi perusahaan.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Berapa peserta minimal? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Kami melayani minimal 20 peserta. Tidak ada batasan maksimal — kami sering menangani 200–300 anak dari berbagai panti asuhan dalam satu event besar.</p></div>
+            </div>
+
+            <h2 id="sec-kesimpulan">Kesimpulan</h2>
+            <p>Senyum ceria anak-anak yatim adalah investasi batin yang tak ternilai. Wujudkan niat baik Anda dengan cara yang lebih membahagiakan melalui <strong>paket outbound anak yatim di Batu</strong> dari Gemilang Katun Outbound — dikelola dengan penuh dedikasi dan cinta kasih oleh tim profesional berpengalaman.</p>
+
+            <!-- Share Buttons -->
+            <div class="share-section">
+              <p class="fw-bold mb-3" style="font-size:.87rem;text-transform:uppercase;letter-spacing:.08em;">Bagikan Artikel Ini:</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://gemilangkatun.com/artikel2.html" target="_blank" rel="noopener" class="btn-share btn-share-fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=https://gemilangkatun.com/artikel2.html" target="_blank" rel="noopener" class="btn-share btn-share-tw"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a>
+                <a href="https://api.whatsapp.com/send?text=https://gemilangkatun.com/artikel2.html" target="_blank" rel="noopener" class="btn-share btn-share-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn-share btn-share-ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+              </div>
+            </div>
           </article>
 
           <div class="wa-cta-box">
@@ -347,12 +428,10 @@
           </div>
 
           <div class="author-box d-flex align-items-start gap-3">
-            <div class="author-avatar">G</div>
+            <div class="author-avatar">W</div>
             <div>
-              <p class="fw-black mb-1" style="font-size:0.9rem;">Gemilang Katun Outbound</p>
-              <p class="text-secondary small mb-0" style="line-height:1.6;">
-                Tim profesional outbound, gathering, dan event organizer terpercaya di Malang &amp; Batu, Jawa Timur. Berpengalaman lebih dari 12 tahun melayani ribuan peserta dari berbagai kalangan.
-              </p>
+              <p class="fw-black mb-1" style="font-size:0.9rem;">Wildan</p>
+              <p class="text-secondary small mb-0" style="line-height:1.6;">Fasilitator senior &amp; content writer di Gemilang Katun Outbound. Berpengalaman lebih dari 8 tahun mendampingi kegiatan outbound sosial, gathering CSR, dan event anak di kawasan Malang &amp; Batu, Jawa Timur.</p>
             </div>
           </div>
 
@@ -462,6 +541,21 @@
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('show', window.scrollY > 300); });
     scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    function toggleTOC() {
+      const list = document.getElementById('tocList');
+      const chevron = document.getElementById('tocChevron');
+      const isOpen = list.style.display !== 'none';
+      list.style.display = isOpen ? 'none' : 'block';
+      chevron.classList.toggle('rotated', isOpen);
+    }
+    function toggleFAQ(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotated'));
+      if (!isOpen) { answer.classList.add('open'); icon.classList.add('rotated'); }
+    }
   </script>
 </body>
 </html>

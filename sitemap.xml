@@ -5,7 +5,7 @@
 
   <!-- Halaman Utama -->
   <url>
-    <loc>https://gemilangkatun.com/index.html</loc>
+    <loc>https://provider-outbound.vercel.app/index.html</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- Blog Index -->
   <url>
-    <loc>https://gemilangkatun.com/blog.html</loc>
+    <loc>https://provider-outbound.vercel.app/blog.html</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -32,7 +32,7 @@
 
   <!-- Artikel 2: Paket Outbound Anak Yatim di Batu -->
   <url>
-    <loc>https://gemilangkatun.com/artikel2.html</loc>
+    <loc>https://provider-outbound.vercel.app/artikel2.html</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -41,7 +41,7 @@
 
   <!-- Artikel 3: Lokasi Fun Offroad Ramah Anak di Batu -->
   <url>
-    <loc>https://gemilangkatun.com/artikel3.html</loc>
+    <loc>https://provider-outbound.vercel.app/artikel3.html</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -50,7 +50,7 @@
 
   <!-- Artikel 4: Outbound Spiritual Building Training Malang -->
   <url>
-    <loc>https://gemilangkatun.com/artikel4.html</loc>
+    <loc>https://provider-outbound.vercel.app/artikel4.html</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -59,7 +59,7 @@
 
   <!-- Artikel 5: Paket Gathering Pantai Goa China Malang -->
   <url>
-    <loc>https://gemilangkatun.com/artikel5.html</loc>
+    <loc>https://provider-outbound.vercel.app/artikel5.html</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

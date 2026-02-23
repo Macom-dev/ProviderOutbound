@@ -216,6 +216,43 @@
       .wa-cta-box .wa-number { font-size: 1.1rem; }
       .btn-wa-article { font-size: 0.8rem; padding: 10px 14px; }
     }
+    .toc-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:24px}
+    .toc-toggle{width:100%;background:none;border:none;padding:15px 20px;font-family:inherit;font-weight:700;font-size:.92rem;color:var(--bg-dark);cursor:pointer;display:flex;align-items:center;transition:background .2s}
+    .toc-toggle:hover{background:rgba(19,236,91,.06)}
+    .toc-chevron{transition:transform .3s;font-size:.75rem;margin-left:auto}
+    .toc-chevron.rotated{transform:rotate(-180deg)}
+    .toc-list{list-style:none;padding:0 20px 16px;margin:0;border-top:1px solid #e2e8f0}
+    .toc-list li{padding:4px 0}
+    .toc-list a{color:#475569;font-size:.85rem;text-decoration:none;transition:color .2s}
+    .toc-list a:hover{color:var(--primary-dark)}
+    .blockquote-custom{border-left:4px solid var(--primary);background:rgba(19,236,91,.06);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0}
+    .blockquote-custom p{font-size:1.05rem;font-style:italic;color:var(--bg-dark);margin-bottom:8px}
+    .blockquote-custom footer{font-size:.82rem;color:#64748b;font-weight:700}
+    .baca-juga-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin:24px 0}
+    .baca-juga-label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.07em;color:var(--primary-dark);margin-bottom:10px}
+    .baca-juga-box a{display:block;color:#334155;font-size:.88rem;padding:4px 0;text-decoration:none;transition:color .2s}
+    .baca-juga-box a:hover{color:var(--primary-dark)}
+    .faq-item{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:10px}
+    .faq-question{width:100%;background:none;border:none;text-align:left;padding:15px 18px;font-family:inherit;font-weight:700;font-size:.92rem;color:#1e293b;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s}
+    .faq-question:hover{background:var(--bg-light)}
+    .faq-icon{font-size:.75rem;transition:transform .3s;flex-shrink:0}
+    .faq-icon.rotated{transform:rotate(-180deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 18px;font-size:.9rem;color:#475569;line-height:1.7}
+    .faq-answer.open{max-height:300px;padding:12px 18px 16px}
+    .share-section{border-top:1px solid #e2e8f0;padding-top:20px;margin-top:24px}
+    .btn-share{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+    .btn-share:hover{opacity:.82}
+    .btn-share-fb{background:#1877f2;color:#fff}
+    .btn-share-tw{background:#000;color:#fff}
+    .btn-share-wa{background:#25d366;color:#fff}
+    .btn-share-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+    .related-card-full{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:14px}
+    .related-thumb-full{width:100%;height:120px;object-fit:cover;display:block}
+    .related-card-full .related-badge{display:inline-block;margin:10px 14px 5px;background:rgba(19,236,91,.1);border:1px solid rgba(19,236,91,.3);color:var(--primary-dark);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+    .related-title-full{font-weight:700;font-size:.87rem;color:#1e293b;padding:0 14px;margin-bottom:6px;line-height:1.4}
+    .related-card-full p{padding:0 14px;font-size:.82rem;color:#64748b}
+    .btn-related-read{display:inline-flex;align-items:center;gap:6px;margin:4px 14px 12px;font-size:.78rem;font-weight:700;color:var(--primary-dark);text-decoration:none;transition:gap .2s}
+    .btn-related-read:hover{gap:10px;color:var(--bg-dark)}
   </style>
 </head>
 <body>
@@ -236,8 +273,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#destinations">Destinations</a></li>
           <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          <li class="nav-item ms-md-3 mt-2 mt-md-0"><a href="https://wa.me/6282211221909" class="btn btn-book-now px-4 py-2 rounded-3">Book Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#cta">Hubungi Kami</a></li>
         </ul>
       </div>
     </div>
@@ -281,42 +317,87 @@
             </a>
           </div>
 
-          <article class="article-body">
-            <p>
-              Rutinitas mengadakan acara perusahaan tahunan di kawasan pegunungan yang dingin sesekali bisa menimbulkan rasa bosan di kalangan karyawan. Jika Anda ingin menyuntikkan semangat tropis yang ceria dan visual yang benar-benar berbeda, memutar setir ke arah pesisir selatan adalah manuver yang sangat brilian. Memilih <strong>paket gathering pantai goa china malang</strong> menawarkan lanskap eksotis berupa hamparan pasir putih bersih, pulau-pulau karang kecil di tengah laut, dan deburan ombak Samudra Hindia yang langsung menyapu kepenatan sejak langkah pertama Anda turun dari bus.
-            </p>
-
-            <h2>Team Building yang Energik di Arena Pasir Putih</h2>
-            <p>
-              Berkegiatan di pantai pesisir selatan tentu menuntut pemahaman medan yang berbeda dari pegunungan. Ombak di kawasan ini terkenal cukup kuat, sehingga aktivitas berenang di laut lepas sangat tidak disarankan. Namun, hal itu tidak mengurangi keseruan <strong>paket gathering pantai goa china malang</strong>.
-            </p>
-            <p>
-              Garis pantainya yang luas dan berpasir lembut adalah arena yang luar biasa aman untuk menggelar simulasi team building yang menguras energi, seperti:
-            </p>
-            <ul style="line-height:2;">
-              <li><strong>Beach volleyball</strong> antar divisi yang memanas</li>
-              <li><strong>Tarik tambang pasir</strong> — kompetisi klasik yang selalu mengundang tawa</li>
-              <li><strong>Lomba membangun benteng pasir</strong> sebagai metafora teamwork</li>
-              <li><strong>Estafet beregu</strong> dengan berbagai tantangan kreatif</li>
-              <li><strong>Makan siang ikan bakar</strong> segar hasil tangkapan nelayan lokal</li>
+          <!-- TOC -->
+          <div class="toc-box">
+            <button class="toc-toggle" onclick="toggleTOC()" id="tocBtn">
+              <i class="fa-solid fa-list me-2"></i> Daftar Isi
+              <i class="fa-solid fa-chevron-down toc-chevron" id="tocChevron"></i>
+            </button>
+            <ul class="toc-list" id="tocList">
+              <li><a href="#sec-team-building">1. Team Building di Arena Pasir Putih</a></li>
+              <li><a href="#sec-kenyamanan">2. Kenyamanan Peserta adalah Prioritas</a></li>
+              <li><a href="#sec-aktivitas">3. Pilihan Aktivitas &amp; Paket</a></li>
+              <li><a href="#sec-faq">4. FAQ</a></li>
+              <li><a href="#sec-kesimpulan">5. Kesimpulan</a></li>
             </ul>
+          </div>
 
-            <h2>Kenyamanan Peserta adalah Prioritas Gemilang Katun Outbound</h2>
-            <p>
-              Gemilang Katun Outbound sangat ahli dalam mengelola acara bernuansa pesisir ini dengan memperhitungkan faktor kenyamanan peserta:
-            </p>
+          <article class="article-body">
+            <p>Rutinitas acara perusahaan tahunan di kawasan pegunungan dingin sesekali bisa menimbulkan rasa bosan. Jika Anda ingin menyuntikkan semangat tropis yang ceria, memutar setir ke pesisir selatan adalah manuver yang brilian. <strong>Paket gathering Pantai Goa China Malang</strong> menawarkan lanskap eksotis: hamparan pasir putih bersih, pulau-pulau karang kecil, dan deburan ombak Samudra Hindia yang langsung menyapu kepenatan sejak langkah pertama turun dari bus.</p>
+
+            <h2 id="sec-team-building">Team Building yang Energik di Arena Pasir Putih</h2>
+            <p>Berkegiatan di pantai pesisir selatan menuntut pemahaman medan yang berbeda dari pegunungan. Ombak di kawasan ini terkenal cukup kuat, sehingga aktivitas berenang di laut lepas tidak disarankan. Namun, hal itu tidak mengurangi keseruan <strong>paket gathering Pantai Goa China Malang</strong>. Garis pantai yang luas dan berpasir lembut adalah arena yang luar biasa untuk menggelar team building yang menguras energi.</p>
+
+            <blockquote class="blockquote-custom">
+              <p>"Angin laut, suara ombak, dan tawa rekan kerja yang terlepas bebas di tepi pantai — inilah formula ajaib yang memulihkan semangat tim lebih dari sesi motivasi mana pun."</p>
+              <footer>— Wildan, Event Director Gemilang Katun Outbound</footer>
+            </blockquote>
+
+            <h2 id="sec-kenyamanan">Kenyamanan Peserta adalah Prioritas</h2>
+            <p>Gemilang Katun Outbound sangat ahli dalam mengelola acara bernuansa pesisir dengan memperhitungkan faktor kenyamanan peserta:</p>
             <ul style="line-height:2;">
               <li><strong>Area basecamp</strong> lengkap dengan puluhan tenda sarnafil sebagai tempat berteduh</li>
               <li><strong>Kelapa muda segar</strong> dan air mineral dingin tanpa batas untuk mencegah dehidrasi</li>
               <li><strong>Ruang bilas air tawar</strong> yang terkoordinasi dengan pengelola setempat</li>
               <li><strong>Sajian makan siang</strong> ikan bakar khas pesisir di pinggir pantai</li>
-              <li><strong>Armada bus</strong> yang nyaman dari titik keberangkatan hingga kembali</li>
+              <li><strong>Armada bus</strong> nyaman dari titik keberangkatan hingga kembali</li>
             </ul>
 
-            <h2>Kejutan Manis untuk Seluruh Tim Anda Tahun Ini</h2>
-            <p>
-              Hadirkan kejutan manis dan pengalaman berjemur yang eksotis bagi seluruh anggota perusahaan Anda tahun ini. Rencanakan pelarian dari rutinitas kantor dengan sempurna. Amankan tanggal Anda dan pesan <strong>paket gathering pantai goa china malang</strong> melalui tim kami untuk mewujudkan liburan outing bergaya tropis yang tak terlupakan.
-            </p>
+            <h2 id="sec-aktivitas">Pilihan Aktivitas di Pantai Goa China</h2>
+            <p>Beragam aktivitas menarik tersedia untuk mengisi hari gathering Anda:</p>
+            <ul style="line-height:2;">
+              <li><strong>Beach volleyball</strong> antar divisi yang memanas</li>
+              <li><strong>Tarik tambang pasir</strong> — kompetisi klasik yang selalu mengundang tawa</li>
+              <li><strong>Lomba membangun benteng pasir</strong> sebagai metafora teamwork</li>
+              <li><strong>Estafet beregu</strong> dengan berbagai tantangan kreatif</li>
+              <li><strong>Outbound pantai</strong>: perahu karet, sand art competition, dan sesi foto sunset</li>
+            </ul>
+
+            <!-- Baca Juga -->
+            <div class="baca-juga-box">
+              <p class="baca-juga-label"><i class="fa-solid fa-book-open me-2"></i>Baca Juga</p>
+              <a href="artikel1.html">→ EO Gathering Reuni Sekolah di Malang yang Berkesan</a>
+              <a href="artikel3.html">→ Lokasi Fun Offroad Ramah Anak di Batu Malang</a>
+              <a href="artikel4.html">→ Outbound Spiritual Building Training di Malang</a>
+            </div>
+
+            <h2 id="sec-faq">FAQ — Paket Gathering Pantai Goa China Malang</h2>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Dimana lokasi Pantai Goa China Malang? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Pantai Goa China terletak di Desa Sitiarjo, Kecamatan Sumbermanjing Wetan, Kabupaten Malang, Jawa Timur. Berjarak sekitar 60–70 km dari pusat kota Malang atau 2–2,5 jam perjalanan via JLS (Jalur Lintas Selatan) yang sudah mulus.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Berapa harga paket gathering di Pantai Goa China? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Harga tergantung jumlah peserta dan layanan yang dipilih. Estimasi mulai Rp 5.000.000 untuk 50 peserta (paket basic) hingga Rp 25.000.000+ (paket premium 200 peserta, termasuk bus, makan, dokumentasi). Hubungi <strong>0822-1122-1909</strong> untuk penawaran khusus.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Apakah aman untuk anak-anak? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Pantai Goa China memiliki ombak yang cukup kuat, sehingga berenang di laut lepas <strong>tidak disarankan</strong>. Namun, aktivitas pantai lainnya (games, makan siang, foto) sangat aman dan menyenangkan untuk seluruh keluarga.</p></div>
+            </div>
+
+            <h2 id="sec-kesimpulan">Kesimpulan</h2>
+            <p>Hadirkan kejutan manis dan pengalaman eksotis bagi seluruh anggota perusahaan Anda. Amankan tanggal Anda dan pesan <strong>paket gathering Pantai Goa China Malang</strong> melalui tim Gemilang Katun Outbound untuk mewujudkan outing bergaya tropis yang tak terlupakan.</p>
+
+            <!-- Share Buttons -->
+            <div class="share-section">
+              <p class="fw-bold mb-3" style="font-size:.87rem;text-transform:uppercase;letter-spacing:.08em;">Bagikan Artikel Ini:</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://gemilangkatun.com/artikel5.html" target="_blank" rel="noopener" class="btn-share btn-share-fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=https://gemilangkatun.com/artikel5.html" target="_blank" rel="noopener" class="btn-share btn-share-tw"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a>
+                <a href="https://api.whatsapp.com/send?text=https://gemilangkatun.com/artikel5.html" target="_blank" rel="noopener" class="btn-share btn-share-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn-share btn-share-ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+              </div>
+            </div>
           </article>
 
           <div class="wa-cta-box">
@@ -330,10 +411,10 @@
           </div>
 
           <div class="author-box d-flex align-items-start gap-3">
-            <div class="author-avatar">G</div>
+            <div class="author-avatar">W</div>
             <div>
-              <p class="fw-black mb-1" style="font-size:0.9rem;">Gemilang Katun Outbound</p>
-              <p class="text-secondary small mb-0" style="line-height:1.6;">Tim profesional outbound, gathering, dan event organizer terpercaya di Malang &amp; Batu, Jawa Timur. Berpengalaman lebih dari 12 tahun melayani ribuan peserta dari berbagai kalangan.</p>
+              <p class="fw-black mb-1" style="font-size:0.9rem;">Wildan</p>
+              <p class="text-secondary small mb-0" style="line-height:1.6;">Fasilitator senior &amp; event director di Gemilang Katun Outbound. Berpengalaman lebih dari 8 tahun mengelola gathering pantai, outbound, dan corporate event di kawasan Jawa Timur.</p>
             </div>
           </div>
 
@@ -434,6 +515,21 @@
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('show', window.scrollY > 300); });
     scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    function toggleTOC() {
+      const list = document.getElementById('tocList');
+      const chevron = document.getElementById('tocChevron');
+      const isOpen = list.style.display !== 'none';
+      list.style.display = isOpen ? 'none' : 'block';
+      chevron.classList.toggle('rotated', isOpen);
+    }
+    function toggleFAQ(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotated'));
+      if (!isOpen) { answer.classList.add('open'); icon.classList.add('rotated'); }
+    }
   </script>
 </body>
 </html>

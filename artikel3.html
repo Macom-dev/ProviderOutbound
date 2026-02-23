@@ -216,6 +216,49 @@
       .wa-cta-box .wa-number { font-size: 1.1rem; }
       .btn-wa-article { font-size: 0.8rem; padding: 10px 14px; }
     }
+    /* TOC */
+    .toc-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:24px}
+    .toc-toggle{width:100%;background:none;border:none;padding:15px 20px;font-family:inherit;font-weight:700;font-size:.92rem;color:var(--bg-dark);cursor:pointer;display:flex;align-items:center;transition:background .2s}
+    .toc-toggle:hover{background:rgba(19,236,91,.06)}
+    .toc-chevron{transition:transform .3s;font-size:.75rem;margin-left:auto}
+    .toc-chevron.rotated{transform:rotate(-180deg)}
+    .toc-list{list-style:none;padding:0 20px 16px;margin:0;border-top:1px solid #e2e8f0}
+    .toc-list li{padding:4px 0}
+    .toc-list a{color:#475569;font-size:.85rem;text-decoration:none;transition:color .2s}
+    .toc-list a:hover{color:var(--primary-dark)}
+    /* Blockquote */
+    .blockquote-custom{border-left:4px solid var(--primary);background:rgba(19,236,91,.06);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0}
+    .blockquote-custom p{font-size:1.05rem;font-style:italic;color:var(--bg-dark);margin-bottom:8px}
+    .blockquote-custom footer{font-size:.82rem;color:#64748b;font-weight:700}
+    /* Baca Juga */
+    .baca-juga-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin:24px 0}
+    .baca-juga-label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.07em;color:var(--primary-dark);margin-bottom:10px}
+    .baca-juga-box a{display:block;color:#334155;font-size:.88rem;padding:4px 0;text-decoration:none;transition:color .2s}
+    .baca-juga-box a:hover{color:var(--primary-dark)}
+    /* FAQ */
+    .faq-item{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:10px}
+    .faq-question{width:100%;background:none;border:none;text-align:left;padding:15px 18px;font-family:inherit;font-weight:700;font-size:.92rem;color:#1e293b;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s}
+    .faq-question:hover{background:var(--bg-light)}
+    .faq-icon{font-size:.75rem;transition:transform .3s;flex-shrink:0}
+    .faq-icon.rotated{transform:rotate(-180deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 18px;font-size:.9rem;color:#475569;line-height:1.7}
+    .faq-answer.open{max-height:300px;padding:12px 18px 16px}
+    /* Share */
+    .share-section{border-top:1px solid #e2e8f0;padding-top:20px;margin-top:24px}
+    .btn-share{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+    .btn-share:hover{opacity:.82}
+    .btn-share-fb{background:#1877f2;color:#fff}
+    .btn-share-tw{background:#000;color:#fff}
+    .btn-share-wa{background:#25d366;color:#fff}
+    .btn-share-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+    /* Related card full (sidebar) */
+    .related-card-full{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:14px}
+    .related-thumb-full{width:100%;height:120px;object-fit:cover;display:block}
+    .related-card-full .related-badge{display:inline-block;margin:10px 14px 5px;background:rgba(19,236,91,.1);border:1px solid rgba(19,236,91,.3);color:var(--primary-dark);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+    .related-title-full{font-weight:700;font-size:.87rem;color:#1e293b;padding:0 14px;margin-bottom:6px;line-height:1.4}
+    .related-card-full p{padding:0 14px;font-size:.82rem;color:#64748b}
+    .btn-related-read{display:inline-flex;align-items:center;gap:6px;margin:4px 14px 12px;font-size:.78rem;font-weight:700;color:var(--primary-dark);text-decoration:none;transition:gap .2s}
+    .btn-related-read:hover{gap:10px;color:var(--bg-dark)}
   </style>
 </head>
 <body>
@@ -236,8 +279,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#destinations">Destinations</a></li>
           <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          <li class="nav-item ms-md-3 mt-2 mt-md-0"><a href="https://wa.me/6282211221909" class="btn btn-book-now px-4 py-2 rounded-3">Book Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#cta">Hubungi Kami</a></li>
         </ul>
       </div>
     </div>
@@ -281,23 +323,35 @@
             </a>
           </div>
 
+          <!-- TOC -->
+          <div class="toc-box">
+            <button class="toc-toggle" onclick="toggleTOC()" id="tocBtn">
+              <i class="fa-solid fa-list me-2"></i> Daftar Isi
+              <i class="fa-solid fa-chevron-down toc-chevron" id="tocChevron"></i>
+            </button>
+            <ul class="toc-list" id="tocList">
+              <li><a href="#sec-rute">1. Rute yang Toleran dan Bebas Risiko Ekstrem</a></li>
+              <li><a href="#sec-keamanan">2. Standar Keamanan Tertinggi</a></li>
+              <li><a href="#sec-paket">3. Pilihan Paket Fun Offroad</a></li>
+              <li><a href="#sec-faq">4. FAQ</a></li>
+              <li><a href="#sec-kesimpulan">5. Kesimpulan</a></li>
+            </ul>
+          </div>
+
           <article class="article-body">
-            <p>
-              Mengenalkan anak-anak pada keindahan alam liar sering kali terbentur pada rasa khawatir orang tua akan faktor keselamatan dan kelelahan fisik. Melakukan pendakian atau jalan kaki jauh tentu bukan pilihan yang bijak jika Anda membawa balita. Namun, sensasi petualangan tetap bisa dinikmati dengan aman jika Anda tahu di mana menemukan <strong>lokasi fun offroad ramah anak di batu</strong>. Menyewa jip terbuka untuk membelah hutan pinus kini menjadi alternatif liburan keluarga yang sangat digemari, karena memberikan pengalaman visual yang memukau tanpa harus memeras keringat.
-            </p>
+            <p>Mengenalkan anak-anak pada keindahan alam liar sering terbentur rasa khawatir orang tua soal keselamatan. Sensasi petualangan tetap bisa dinikmati dengan aman jika Anda tahu di mana menemukan <strong>lokasi fun offroad ramah anak di Batu</strong>. Menyewa jip terbuka untuk membelah hutan pinus kini menjadi alternatif liburan keluarga yang sangat digemari — memberikan pengalaman visual memukau tanpa harus memeras keringat anak-anak.</p>
 
-            <h2>Rute yang Toleran dan Bebas Risiko Ekstrem</h2>
-            <p>
-              Banyak orang tua yang ragu karena mengira semua jalur offroad itu berbahaya dan memicu mual. Kenyataannya, <strong>lokasi fun offroad ramah anak di batu</strong> seperti rute hutan pinus Coban Putri atau kawasan Junggo menawarkan medan yang sangat toleran. Jalanannya memang makadam (berbatu) dan sedikit berlumpur, namun tidak memiliki tanjakan ekstrem atau kemiringan yang mengancam keselamatan.
-            </p>
-            <p>
-              Guncangan yang dihasilkan dari suspensi jip masih dalam batas wajar dan justru sering kali membuat anak-anak tertawa kegirangan saat mobil melibas genangan air dangkal yang memercikkan air ke bodi kendaraan.
-            </p>
+            <h2 id="sec-rute">Rute yang Toleran dan Bebas Risiko Ekstrem</h2>
+            <p>Banyak orang tua ragu karena mengira semua jalur offroad berbahaya. Kenyataannya, <strong>lokasi fun offroad ramah anak di Batu</strong> seperti rute hutan pinus Coban Putri atau kawasan Junggo menawarkan medan yang sangat toleran. Jalanannya memang makadam (berbatu) dan sedikit berlumpur, namun tanpa tanjakan ekstrem yang mengancam keselamatan.</p>
+            <p>Guncangan dari suspensi jip masih dalam batas wajar — justru membuat anak-anak tertawa kegirangan saat mobil melibas genangan air yang memercikkan cipratan ke bodi kendaraan.</p>
 
-            <h2>Standar Keamanan Tertinggi dari Gemilang Katun Outbound</h2>
-            <p>
-              Keselamatan keluarga Anda adalah prioritas mutlak bagi Gemilang Katun Outbound. Kami menyeleksi armada jip mitra kami dengan standar keamanan yang ketat, meliputi:
-            </p>
+            <blockquote class="blockquote-custom">
+              <p>"Momen anak Anda tertawa keras saat jip melewati kubangan lumpur — itulah kenangan perjalanan yang tak bisa dibeli di taman hiburan mana pun."</p>
+              <footer>— Wildan, Fasilitator Gemilang Katun Outbound</footer>
+            </blockquote>
+
+            <h2 id="sec-keamanan">Standar Keamanan Tertinggi dari Gemilang Katun Outbound</h2>
+            <p>Keselamatan keluarga Anda adalah prioritas mutlak. Kami menyeleksi armada jip mitra dengan standar ketat:</p>
             <ul style="line-height:2;">
               <li><strong>Pengemudi lokal berpengalaman</strong> yang memahami karakteristik medan</li>
               <li><strong>Armada jip terawat</strong> dengan ban, rem, dan suspensi yang rutin diperiksa</li>
@@ -305,14 +359,51 @@
               <li><strong>P3K &amp; radio komunikasi</strong> di setiap kendaraan</li>
               <li><strong>Briefing keselamatan</strong> sebelum keberangkatan untuk seluruh keluarga</li>
             </ul>
-            <p>
-              Pengemudi dari Gemilang Katun Outbound adalah warga lokal yang sangat memahami bahwa mereka sedang membawa "kargo presisi" berupa anak-anak, sehingga gaya menyetirnya akan disesuaikan menjadi lebih halus dan santai.
-            </p>
 
-            <h2>Pengalaman Otentik yang Tak Terlupakan</h2>
-            <p>
-              Liburan akhir pekan tidak harus selalu dihabiskan di dalam pusat perbelanjaan atau taman hiburan buatan. Hadirkan pengalaman otentik yang akan membuat anak-anak Anda tidak berhenti bercerita. Hubungi kami untuk mem-booking perjalanan Anda dan nikmati serunya menjelajah <strong>lokasi fun offroad ramah anak di batu</strong> bersama tim profesional kami.
-            </p>
+            <h2 id="sec-paket">Pilihan Paket Fun Offroad untuk Keluarga</h2>
+            <p>Kami menyediakan beberapa pilihan paket yang bisa disesuaikan dengan kebutuhan:</p>
+            <ul style="line-height:2;">
+              <li><strong>Paket Short Trip (2 jam):</strong> Rute hutan pinus, 2 titik foto ikonik, cocok untuk anak usia 3+</li>
+              <li><strong>Paket Medium (4 jam):</strong> Termasuk makan siang di kebun, waterfall stop, cocok weekend keluarga</li>
+              <li><strong>Paket Full Day:</strong> Kombinasi offroad + outbound mini + makan prasmanan + dokumentasi lengkap</li>
+            </ul>
+            <p>Setiap paket tersedia untuk 1 jip (4–6 orang) hingga konvoi besar untuk gathering keluarga besar atau kantor.</p>
+
+            <!-- Baca Juga -->
+            <div class="baca-juga-box">
+              <p class="baca-juga-label"><i class="fa-solid fa-book-open me-2"></i>Baca Juga</p>
+              <a href="artikel1.html">→ EO Gathering Reuni Sekolah di Malang yang Berkesan</a>
+              <a href="artikel2.html">→ Paket Outbound Anak Yatim di Batu yang Bermakna</a>
+              <a href="artikel5.html">→ Paket Gathering Pantai Goa China Malang</a>
+            </div>
+
+            <h2 id="sec-faq">FAQ — Fun Offroad Ramah Anak di Batu</h2>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Usia berapa anak bisa ikut fun offroad? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Anak usia 3 tahun ke atas sudah bisa ikut fun offroad di rute kami yang ramah keluarga. Bayi di bawah 1 tahun tidak disarankan karena guncangan, meski ringan, tetap ada. Anak di bawah 12 tahun <strong>wajib didampingi orang tua</strong> di dalam kendaraan.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Berapa harga sewa jip offroad di Batu? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Harga mulai Rp 300.000 – Rp 650.000 per jip (4–6 orang) tergantung durasi dan rute. Hubungi <strong>0822-1122-1909</strong> untuk booking dan penawaran konvoi grup.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Apakah bisa dikombinasikan dengan outbound? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Ya! Kami punya paket kombinasi offroad + outbound yang sangat populer untuk kegiatan family gathering kantor dan sekolah. Total waktu 6–8 jam dengan makan siang prasmanan termasuk dalam paket.</p></div>
+            </div>
+
+            <h2 id="sec-kesimpulan">Kesimpulan</h2>
+            <p>Liburan akhir pekan tidak harus di pusat perbelanjaan. Hadirkan pengalaman otentik yang membuat anak-anak tak berhenti bercerita. Hubungi kami dan nikmati serunya menjelajahi <strong>lokasi fun offroad ramah anak di Batu</strong> bersama tim profesional Gemilang Katun Outbound.</p>
+
+            <!-- Share Buttons -->
+            <div class="share-section">
+              <p class="fw-bold mb-3" style="font-size:.87rem;text-transform:uppercase;letter-spacing:.08em;">Bagikan Artikel Ini:</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://gemilangkatun.com/artikel3.html" target="_blank" rel="noopener" class="btn-share btn-share-fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=https://gemilangkatun.com/artikel3.html" target="_blank" rel="noopener" class="btn-share btn-share-tw"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a>
+                <a href="https://api.whatsapp.com/send?text=https://gemilangkatun.com/artikel3.html" target="_blank" rel="noopener" class="btn-share btn-share-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn-share btn-share-ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+              </div>
+            </div>
           </article>
 
           <div class="wa-cta-box">
@@ -326,10 +417,10 @@
           </div>
 
           <div class="author-box d-flex align-items-start gap-3">
-            <div class="author-avatar">G</div>
+            <div class="author-avatar">W</div>
             <div>
-              <p class="fw-black mb-1" style="font-size:0.9rem;">Gemilang Katun Outbound</p>
-              <p class="text-secondary small mb-0" style="line-height:1.6;">Tim profesional outbound, gathering, dan event organizer terpercaya di Malang &amp; Batu, Jawa Timur. Berpengalaman lebih dari 12 tahun melayani ribuan peserta dari berbagai kalangan.</p>
+              <p class="fw-black mb-1" style="font-size:0.9rem;">Wildan</p>
+              <p class="text-secondary small mb-0" style="line-height:1.6;">Fasilitator senior &amp; content writer di Gemilang Katun Outbound. Berpengalaman lebih dari 8 tahun memimpin ratusan kegiatan offroad, outbound, dan gathering keluarga di kawasan Malang &amp; Batu, Jawa Timur.</p>
             </div>
           </div>
 
@@ -429,6 +520,21 @@
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('show', window.scrollY > 300); });
     scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    function toggleTOC() {
+      const list = document.getElementById('tocList');
+      const chevron = document.getElementById('tocChevron');
+      const isOpen = list.style.display !== 'none';
+      list.style.display = isOpen ? 'none' : 'block';
+      chevron.classList.toggle('rotated', isOpen);
+    }
+    function toggleFAQ(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotated'));
+      if (!isOpen) { answer.classList.add('open'); icon.classList.add('rotated'); }
+    }
   </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id" prefix="og: https://ogp.me/ns#">
 <head>
+  <title>Gemilang Katun Outbound | EO Outbound, Gathering & Team Building Malang Terpercaya</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -590,6 +591,78 @@
       .hero-stat-value { font-size: 1.2rem; }
       .service-card { padding: 18px; }
     }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--bg-dark);
+      border-radius: 24px;
+      padding: 52px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-deco-left, .cta-deco-right {
+      position: absolute;
+      font-size: 9rem;
+      opacity: 0.07;
+      color: var(--primary);
+      pointer-events: none;
+    }
+    .cta-deco-left { left: -20px; bottom: -20px; }
+    .cta-deco-right { right: -20px; top: -20px; transform: rotate(15deg); font-size: 12rem; }
+    .cta-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .cta-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 580px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .btn-cta-wa {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary);
+      color: var(--bg-dark);
+      font-weight: 800; font-size: 1rem;
+      padding: 14px 28px; border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 6px 24px rgba(19,236,91,0.35);
+    }
+    .btn-cta-wa:hover { background: var(--primary-dark); color: var(--bg-dark); transform: translateY(-2px); }
+    .btn-cta-email {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: #ffffff;
+      font-weight: 700; font-size: 1rem;
+      padding: 13px 26px; border-radius: 12px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-cta-email:hover { border-color: var(--primary); background: rgba(19,236,91,0.08); color: var(--primary); }
+    .cta-contact-info {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .cta-contact-info strong { color: rgba(255,255,255,0.85); }
+
+    /* ===== SITE FOOTER ===== */
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      padding: 24px 0;
+    }
+    .site-footer a { color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; }
+    .site-footer a:hover { color: var(--primary); }
+
+    @media (max-width: 767px) {
+      .cta-banner { padding: 32px 24px; border-radius: 16px; }
+      .cta-deco-right { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -618,10 +691,7 @@
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item ms-md-3 mt-2 mt-md-0">
-            <a href="#contact" class="btn btn-book-now px-4 py-2 rounded-3">Book Now</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#cta">Hubungi Kami</a></li>
         </ul>
       </div>
     </div>
@@ -660,12 +730,12 @@
           </p>
 
           <!-- CTA Buttons -->
-          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
-            <a href="#contact" class="btn btn-hero-primary d-inline-flex align-items-center gap-2">
-              Plan Your Retreat <i class="fa-solid fa-arrow-right"></i>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5 hero-cta-wrap">
+            <a href="#services" class="btn btn-hero-primary d-inline-flex align-items-center gap-2">
+              Lihat Layanan Kami <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="#services" class="btn btn-hero-secondary d-inline-flex align-items-center gap-2">
-              Explore Services
+            <a href="#destinations" class="btn btn-hero-secondary d-inline-flex align-items-center gap-2">
+              Explore Destinations
             </a>
           </div>
 
@@ -804,13 +874,13 @@
               <i class="fa-solid fa-brain"></i>
             </div>
             <h3 class="fw-bold mb-3 fs-4">Leadership Retreats</h3>
-            <p class="text-secondary mb-4">Strategic planning meets high-adventure. Perfect for executive teams looking to align vision and strategy.</p>
-            <ul class="service-feature-list text-secondary mb-4">
+            <p class="text-secondary mb-3">Program retreat eksklusif yang menggabungkan perencanaan strategis dengan aktivitas petualangan bertaraf tinggi. Dirancang khusus untuk tim eksekutif yang ingin menyelaraskan visi, misi, dan strategi perusahaan secara menyeluruh dalam suasana alam terbuka yang menginspirasi.</p>
+            <ul class="service-feature-list text-secondary mb-0">
               <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Strategic Workshops</li>
               <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Decision Under Pressure</li>
               <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Elite Facilitation</li>
+              <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Evaluasi & Debriefing Profesional</li>
             </ul>
-            <button class="btn-service-outline">Learn More</button>
           </div>
         </div>
 
@@ -822,13 +892,13 @@
               <i class="fa-solid fa-rocket"></i>
             </div>
             <h3 class="fw-bold mb-3 fs-4 text-white">Ultimate Challenge</h3>
-            <p class="mb-4" style="color:rgba(255,255,255,0.6);">A high-impact 3-day adventure that breaks down silos and builds unbreakable bonds between departments.</p>
-            <ul class="service-feature-list mb-4" style="color:rgba(255,255,255,0.8);">
+            <p class="mb-3" style="color:rgba(255,255,255,0.6);">Program petualangan 3 hari berdampak tinggi yang dirancang untuk meruntuhkan sekat antardepartemen dan membangun ikatan kuat antar anggota tim. Cocok untuk perusahaan yang ingin meningkatkan sinergi dan komunikasi lintas divisi secara signifikan.</p>
+            <ul class="service-feature-list mb-0" style="color:rgba(255,255,255,0.8);">
               <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Survival Simulations</li>
               <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Trust-Building Courses</li>
               <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Evening Debriefs</li>
+              <li><i class="fa-solid fa-check" style="color:var(--primary);"></i> Sertifikat Peserta Resmi</li>
             </ul>
-            <button class="btn-service-primary">Book Popular</button>
           </div>
         </div>
 
@@ -836,18 +906,16 @@
         <div class="col-md-4">
           <div class="service-card service-card-light">
             <div class="service-icon-wrap" style="background:rgba(249,115,22,0.1); color:var(--accent-orange);">
-              <i class="fa-solid fa-party-horn fa-classic" aria-hidden="true"></i>
-              <i class="fa-solid fa-celebrate"></i>
               <i class="fa-regular fa-face-laugh-beam"></i>
             </div>
             <h3 class="fw-bold mb-3 fs-4">Culture Days</h3>
-            <p class="text-secondary mb-4">Single-day events focused on celebration, inclusivity, and refreshing team energy in a fun environment.</p>
-            <ul class="service-feature-list text-secondary mb-4">
+            <p class="text-secondary mb-3">Event satu hari yang berfokus pada perayaan kebersamaan, inklusivitas, dan penyegaran energi tim dalam suasana yang menyenangkan dan bebas tekanan. Ideal untuk gathering tahunan, ulang tahun perusahaan, atau momen apresiasi karyawan.</p>
+            <ul class="service-feature-list text-secondary mb-0">
               <li><i class="fa-solid fa-check" style="color:var(--accent-orange);"></i> Team Fun Activities</li>
               <li><i class="fa-solid fa-check" style="color:var(--accent-orange);"></i> Inclusive Design</li>
-              <li><i class="fa-solid fa-check" style="color:var(--accent-orange);"></i> Local Venues</li>
+              <li><i class="fa-solid fa-check" style="color:var(--accent-orange);"></i> Local Venues Malang & Batu</li>
+              <li><i class="fa-solid fa-check" style="color:var(--accent-orange);"></i> Dokumentasi Profesional</li>
             </ul>
-            <button class="btn-service-outline">Learn More</button>
           </div>
         </div>
 
@@ -868,9 +936,6 @@
           <h2 class="fw-black text-white mb-2" style="font-size:clamp(1.8rem,4vw,2.8rem);">Iconic Destinations</h2>
           <p style="color:rgba(255,255,255,0.55);">Pristine locations handpicked to facilitate growth, focus, and connection.</p>
         </div>
-        <a href="#" class="fw-bold text-decoration-none d-inline-flex align-items-center gap-2" style="color:var(--primary);">
-          View Full Catalog <i class="fa-solid fa-arrow-right"></i>
-        </a>
       </div>
 
       <!-- Destination masonry grid -->
@@ -1011,108 +1076,74 @@
   </section>
 
   <!-- =============================================
-       CONTACT / FOOTER SECTION
+       CTA SECTION — Ganti Contact Section
   ============================================== -->
-  <section id="contact" class="py-5" style="padding-top:5rem!important;padding-bottom:5rem!important; background:#ffffff;">
+  <section id="cta" class="py-5" style="background:var(--bg-light); padding-top:5rem!important; padding-bottom:5rem!important;">
     <div class="container">
-      <div class="row g-5 mb-5">
-
-        <!-- Contact info column -->
-        <div class="col-lg-6">
-          <span class="section-label d-block mb-3" style="color:var(--primary);">Get In Touch</span>
-          <h2 class="fw-black mb-4" style="font-size:clamp(1.8rem,4vw,2.8rem);">Ready for Your Next Breakthrough?</h2>
-          <p class="text-secondary fs-5 mb-5" style="line-height:1.75;">Contact us to discuss your team's specific needs and we'll design a program that delivers measurable results.</p>
-
-          <div class="d-flex flex-column gap-4">
-            <div class="d-flex align-items-center gap-3">
-              <div class="contact-icon-wrap"><i class="fa-brands fa-whatsapp"></i></div>
-              <div>
-                <p class="mb-0 text-secondary" style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">WhatsApp / Telepon</p>
-                <p class="mb-0 fw-bold fs-5"><a href="https://wa.me/6282211221909" style="color:inherit;text-decoration:none;">0822-1122-1909</a></p>
-              </div>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-              <div class="contact-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <p class="mb-0 text-secondary" style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">Email Kami</p>
-                <p class="mb-0 fw-bold fs-5"><a href="mailto:hello@gemilangkatun.com" style="color:inherit;text-decoration:none;">hello@gemilangkatun.com</a></p>
-              </div>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-              <div class="contact-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <p class="mb-0 text-secondary" style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">Lokasi</p>
-                <p class="mb-0 fw-bold fs-5">Malang &amp; Batu, Jawa Timur, Indonesia</p>
-              </div>
-            </div>
-          </div>
+      <div class="cta-banner">
+        <!-- Dekorasi ikon pohon/gunung -->
+        <div class="cta-deco-left" aria-hidden="true">
+          <i class="fa-solid fa-mountain-sun"></i>
         </div>
-
-        <!-- Contact form column -->
-        <div class="col-lg-6">
-          <div class="contact-form-wrap">
-            <form>
-              <div class="row g-4 mb-4">
-                <div class="col-sm-6">
-                  <label class="form-label-custom">Full Name</label>
-                  <input type="text" class="form-control-custom" placeholder="John Doe" />
-                </div>
-                <div class="col-sm-6">
-                  <label class="form-label-custom">Work Email</label>
-                  <input type="email" class="form-control-custom" placeholder="john@company.com" />
-                </div>
-              </div>
-              <div class="mb-4">
-                <label class="form-label-custom">Service of Interest</label>
-                <select class="form-control-custom">
-                  <option>Leadership Retreat</option>
-                  <option>Ultimate Challenge</option>
-                  <option>Culture Days</option>
-                  <option>Other / Custom</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label class="form-label-custom">Message</label>
-                <textarea class="form-control-custom" placeholder="Tell us about your team and goals..."></textarea>
-              </div>
-              <button type="submit" class="btn-send">Send Inquiry</button>
-            </form>
-          </div>
+        <div class="cta-deco-right" aria-hidden="true">
+          <i class="fa-solid fa-tree"></i>
         </div>
-
+        <!-- Konten CTA -->
+        <div class="cta-content position-relative">
+          <h2 class="cta-title">Siap untuk Petualangan?</h2>
+          <p class="cta-desc">Konsultasikan kebutuhan outbound, gathering, atau team building perusahaan Anda sekarang. Dapatkan penawaran spesial dan program yang disesuaikan!</p>
+          <div class="d-flex flex-column flex-sm-row gap-3 align-items-start">
+            <a href="https://wa.me/6282211221909" target="_blank" rel="noopener noreferrer" class="btn-cta-wa">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+            <a href="mailto:hello@gemilangkatun.com" class="btn-cta-email">
+              <i class="fa-solid fa-envelope"></i> Email Kami
+            </a>
+          </div>
+          <p class="cta-contact-info mt-3 mb-0">
+            <i class="fa-solid fa-phone-volume me-2"></i>
+            <strong>0822-1122-1909</strong> &nbsp;·&nbsp;
+            <i class="fa-solid fa-location-dot me-1"></i> Malang &amp; Batu, Jawa Timur
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Footer bottom bar -->
-      <div class="pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+  <!-- =============================================
+       SITE FOOTER
+  ============================================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
         <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
           <span style="background:var(--primary);color:var(--bg-dark);padding:5px 7px;border-radius:8px;font-size:1rem;">
             <i class="fa-solid fa-mountain-sun"></i>
           </span>
           <span class="fw-black fs-5">Outbound<span style="color:var(--primary);">Pro</span></span>
         </a>
-        <div class="d-flex gap-4">
+        <div class="d-flex gap-4 flex-wrap justify-content-center">
           <a href="#" class="text-secondary text-decoration-none small fw-bold text-uppercase" style="letter-spacing:0.08em;">Privacy</a>
           <a href="#" class="text-secondary text-decoration-none small fw-bold text-uppercase" style="letter-spacing:0.08em;">Terms</a>
           <a href="#" class="text-secondary text-decoration-none small fw-bold text-uppercase" style="letter-spacing:0.08em;">Safety</a>
-          <a href="#" class="text-secondary text-decoration-none small fw-bold text-uppercase" style="letter-spacing:0.08em;">Careers</a>
+          <a href="blog.html" class="text-secondary text-decoration-none small fw-bold text-uppercase" style="letter-spacing:0.08em;">Blog</a>
         </div>
         <p class="mb-0 text-secondary small">© 2026 Gemilang Katun Outbound. All rights reserved.</p>
       </div>
-
     </div>
-  </section>
+  </footer>
 
   <!-- =============================================
        FLOATING BUTTONS — Fixed bottom-right
        Order (top to bottom): Scroll-Top, WhatsApp
   ============================================== -->
   <div class="floating-buttons">
-    <!-- Scroll To Top button (top position, shows only after scrolling) -->
+    <!-- Scroll To Top button -->
     <button id="scrollTopBtn" class="floating-btn" title="Scroll to top" aria-label="Scroll to top">
       <i class="fa-solid fa-chevron-up"></i>
     </button>
-    <!-- WhatsApp button (bottom position, always visible) -->
-    <a href="https://wa.me/085732021297" target="_blank" rel="noopener noreferrer" class="floating-btn btn-whatsapp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+    <!-- WhatsApp button -->
+    <a href="https://wa.me/6282211221909" target="_blank" rel="noopener noreferrer" class="floating-btn btn-whatsapp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
       <i class="fa-brands fa-whatsapp fs-4"></i>
     </a>
   </div>

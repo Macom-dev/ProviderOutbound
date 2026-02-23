@@ -216,6 +216,43 @@
       .wa-cta-box .wa-number { font-size: 1.1rem; }
       .btn-wa-article { font-size: 0.8rem; padding: 10px 14px; }
     }
+    .toc-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:24px}
+    .toc-toggle{width:100%;background:none;border:none;padding:15px 20px;font-family:inherit;font-weight:700;font-size:.92rem;color:var(--bg-dark);cursor:pointer;display:flex;align-items:center;transition:background .2s}
+    .toc-toggle:hover{background:rgba(19,236,91,.06)}
+    .toc-chevron{transition:transform .3s;font-size:.75rem;margin-left:auto}
+    .toc-chevron.rotated{transform:rotate(-180deg)}
+    .toc-list{list-style:none;padding:0 20px 16px;margin:0;border-top:1px solid #e2e8f0}
+    .toc-list li{padding:4px 0}
+    .toc-list a{color:#475569;font-size:.85rem;text-decoration:none;transition:color .2s}
+    .toc-list a:hover{color:var(--primary-dark)}
+    .blockquote-custom{border-left:4px solid var(--primary);background:rgba(19,236,91,.06);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0}
+    .blockquote-custom p{font-size:1.05rem;font-style:italic;color:var(--bg-dark);margin-bottom:8px}
+    .blockquote-custom footer{font-size:.82rem;color:#64748b;font-weight:700}
+    .baca-juga-box{background:var(--bg-light);border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin:24px 0}
+    .baca-juga-label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.07em;color:var(--primary-dark);margin-bottom:10px}
+    .baca-juga-box a{display:block;color:#334155;font-size:.88rem;padding:4px 0;text-decoration:none;transition:color .2s}
+    .baca-juga-box a:hover{color:var(--primary-dark)}
+    .faq-item{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:10px}
+    .faq-question{width:100%;background:none;border:none;text-align:left;padding:15px 18px;font-family:inherit;font-weight:700;font-size:.92rem;color:#1e293b;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s}
+    .faq-question:hover{background:var(--bg-light)}
+    .faq-icon{font-size:.75rem;transition:transform .3s;flex-shrink:0}
+    .faq-icon.rotated{transform:rotate(-180deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 18px;font-size:.9rem;color:#475569;line-height:1.7}
+    .faq-answer.open{max-height:300px;padding:12px 18px 16px}
+    .share-section{border-top:1px solid #e2e8f0;padding-top:20px;margin-top:24px}
+    .btn-share{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+    .btn-share:hover{opacity:.82}
+    .btn-share-fb{background:#1877f2;color:#fff}
+    .btn-share-tw{background:#000;color:#fff}
+    .btn-share-wa{background:#25d366;color:#fff}
+    .btn-share-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+    .related-card-full{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:14px}
+    .related-thumb-full{width:100%;height:120px;object-fit:cover;display:block}
+    .related-card-full .related-badge{display:inline-block;margin:10px 14px 5px;background:rgba(19,236,91,.1);border:1px solid rgba(19,236,91,.3);color:var(--primary-dark);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+    .related-title-full{font-weight:700;font-size:.87rem;color:#1e293b;padding:0 14px;margin-bottom:6px;line-height:1.4}
+    .related-card-full p{padding:0 14px;font-size:.82rem;color:#64748b}
+    .btn-related-read{display:inline-flex;align-items:center;gap:6px;margin:4px 14px 12px;font-size:.78rem;font-weight:700;color:var(--primary-dark);text-decoration:none;transition:gap .2s}
+    .btn-related-read:hover{gap:10px;color:var(--bg-dark)}
   </style>
 </head>
 <body>
@@ -236,8 +273,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#destinations">Destinations</a></li>
           <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          <li class="nav-item ms-md-3 mt-2 mt-md-0"><a href="https://wa.me/6282211221909" class="btn btn-book-now px-4 py-2 rounded-3">Book Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#cta">Hubungi Kami</a></li>
         </ul>
       </div>
     </div>
@@ -281,18 +317,38 @@
             </a>
           </div>
 
-          <article class="article-body">
-            <p>
-              Tekanan pekerjaan, konflik internal kantor, dan tuntutan hidup yang serba cepat sering kali membuat kesehatan mental karyawan berada di titik nadir (burnout). Ketika motivasi sudah terkikis habis, sekadar mengajak mereka tertawa lewat fun games biasa tidak akan mampu menyembuhkan akar masalahnya. Staf Anda membutuhkan ruang kontemplasi untuk menata ulang kembali niat dan tujuan hidup mereka. Menggelar program <strong>outbound spiritual building training malang</strong> adalah pendekatan holistik yang memadukan aktivitas fisik di alam dengan sesi olah batin dan penyadaran diri secara spiritual.
-            </p>
+          <!-- TOC -->
+          <div class="toc-box">
+            <button class="toc-toggle" onclick="toggleTOC()" id="tocBtn">
+              <i class="fa-solid fa-list me-2"></i> Daftar Isi
+              <i class="fa-solid fa-chevron-down toc-chevron" id="tocChevron"></i>
+            </button>
+            <ul class="toc-list" id="tocList">
+              <li><a href="#sec-lokasi">1. Lokasi yang Menenangkan</a></li>
+              <li><a href="#sec-fasilitator">2. Fasilitator Bersertifikasi</a></li>
+              <li><a href="#sec-modul">3. Modul Program Spiritual</a></li>
+              <li><a href="#sec-faq">4. FAQ</a></li>
+              <li><a href="#sec-kesimpulan">5. Kesimpulan</a></li>
+            </ul>
+          </div>
 
-            <h2>Lokasi yang Menenangkan, Jauh dari Kebisingan</h2>
-            <p>
-              Kawasan dataran tinggi dengan suhunya yang sejuk dan suasananya yang hening adalah katalisator terbaik untuk kegiatan ini. Kami biasanya memilih lokasi vila privat di daerah Punten atau lereng perbukitan Bumiaji yang jauh dari kebisingan jalan raya.
-            </p>
-            <p>
-              Modul dalam <strong>outbound spiritual building training malang</strong> mengkombinasikan:
-            </p>
+          <article class="article-body">
+            <p>Tekanan pekerjaan, konflik internal kantor, dan tuntutan hidup yang serba cepat sering membuat karyawan mengalami burnout. Ketika motivasi sudah terkikis habis, fun games biasa tidak akan mampu menyembuhkan akar masalahnya. Karyawan membutuhkan ruang kontemplasi untuk menata ulang niat dan tujuan hidup. Program <strong>outbound spiritual building training Malang</strong> dari Gemilang Katun Outbound adalah pendekatan holistik yang memadukan aktivitas fisik di alam dengan sesi olah batin dan penyadaran diri secara spiritual.</p>
+
+            <h2 id="sec-lokasi">Lokasi yang Menenangkan, Jauh dari Kebisingan</h2>
+            <p>Kawasan dataran tinggi dengan suhu sejuk dan suasana hening adalah katalisator terbaik untuk kegiatan ini. Kami memilih lokasi vila privat di daerah Punten atau lereng perbukitan Bumiaji yang jauh dari kebisingan jalan raya — menawarkan pemandangan hamparan hijau pegunungan yang menentramkan jiwa.</p>
+
+            <blockquote class="blockquote-custom">
+              <p>"Kedamaian batin tidak bisa dibeli, tetapi bisa dihadirkan — dengan suasana yang tepat, orang yang tepat, dan momen yang dirancang dengan penuh keikhlasan."</p>
+              <footer>— Wildan, Fasilitator Spiritual Gemilang Katun Outbound</footer>
+            </blockquote>
+
+            <h2 id="sec-fasilitator">Fasilitator Bersertifikasi dan Berjiwa Pembimbing</h2>
+            <p>Gemilang Katun Outbound menghadirkan fasilitator dan motivator yang tidak hanya bersertifikasi di bidang capacity building, tetapi juga memiliki kedalaman pendekatan agama maupun psikologi humanis. Tim kami menggunakan intonasi dan diksi yang menenangkan, membimbing peserta untuk berdamai dengan masa lalu dan menumbuhkan rasa syukur.</p>
+            <p>Fasilitas logistik seperti sajian makanan sehat dan tempat ibadah yang nyaman pun kami persiapkan dengan sangat teliti.</p>
+
+            <h2 id="sec-modul">Modul dalam Program Spiritual Building</h2>
+            <p>Modul <strong>outbound spiritual building training Malang</strong> mengkombinasikan:</p>
             <ul style="line-height:2;">
               <li><strong>Soft trekking</strong> menembus kabut pagi yang menyejukkan</li>
               <li><strong>Latihan pernapasan</strong> untuk menurunkan gelombang otak dan meredakan stres</li>
@@ -301,18 +357,41 @@
               <li><strong>Sharing circle</strong> untuk mengurai beban mental yang selama ini dipendam</li>
             </ul>
 
-            <h2>Fasilitator Bersertifikasi dan Berjiwa Pembimbing</h2>
-            <p>
-              Untuk mengawal proses transformasi emosional yang sensitif ini, Gemilang Katun Outbound menghadirkan fasilitator dan motivator yang tidak hanya bersertifikasi di bidang capacity building, tetapi juga memiliki kedalaman pendekatan agama maupun psikologi humanis.
-            </p>
-            <p>
-              Tim Gemilang Katun Outbound menggunakan intonasi dan diksi yang menenangkan, membimbing peserta untuk berdamai dengan masa lalu, membuang energi negatif, dan menumbuhkan rasa syukur. Fasilitas logistik seperti sajian makanan sehat dan tempat ibadah yang nyaman pun kami persiapkan dengan sangat teliti.
-            </p>
+            <!-- Baca Juga -->
+            <div class="baca-juga-box">
+              <p class="baca-juga-label"><i class="fa-solid fa-book-open me-2"></i>Baca Juga</p>
+              <a href="artikel1.html">→ EO Gathering Reuni Sekolah di Malang yang Berkesan</a>
+              <a href="artikel2.html">→ Paket Outbound Anak Yatim di Batu yang Bermakna</a>
+              <a href="artikel5.html">→ Paket Gathering Pantai Goa China Malang</a>
+            </div>
 
-            <h2>Investasi Kesehatan Mental untuk Perusahaan yang Lebih Sehat</h2>
-            <p>
-              Investasi pada kesehatan mental dan spiritual pekerja adalah kunci terciptanya budaya perusahaan yang harmonis dan berintegritas. Jangan tunggu hingga produktivitas tim Anda lumpuh. Segera diskusikan masalah internal instansi Anda, dan rancang program <strong>outbound spiritual building training malang</strong> yang menyejukkan hati bersama konsultan kami.
-            </p>
+            <h2 id="sec-faq">FAQ — Outbound Spiritual Building Training Malang</h2>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Apa itu outbound spiritual building training? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Outbound spiritual building training adalah program pengembangan diri yang memadukan aktivitas fisik di alam terbuka dengan sesi olah batin, renungan, dan penguatan nilai-nilai spiritual. Cocok untuk perusahaan yang ingin meningkatkan motivasi karyawan secara holisitk.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Berapa hari program ini berlangsung? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Program tersedia dalam format 1 hari (fullday), 2 hari 1 malam, hingga 3 hari 2 malam. Durasi disesuaikan dengan kedalaman materi yang diinginkan dan jumlah peserta.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFAQ(this)">Apakah cocok untuk semua agama? <i class="fa-solid fa-chevron-down faq-icon"></i></button>
+              <div class="faq-answer"><p>Ya, program kami dirancang inklusif untuk semua latar belakang agama. Modul spiritual bersifat universal, menekankan nilai-nilai kebaikan, syukur, dan hubungan antar manusia yang melampaui sekat agama.</p></div>
+            </div>
+
+            <h2 id="sec-kesimpulan">Kesimpulan</h2>
+            <p>Investasi pada kesehatan mental dan spiritual karyawan adalah kunci terciptanya budaya perusahaan yang harmonis. Jangan tunggu hingga produktivitas tim lumpuh. Diskusikan masalah internal instansi Anda dan rancang program <strong>outbound spiritual building training Malang</strong> yang menyejukkan hati bersama konsultan kami.</p>
+
+            <!-- Share Buttons -->
+            <div class="share-section">
+              <p class="fw-bold mb-3" style="font-size:.87rem;text-transform:uppercase;letter-spacing:.08em;">Bagikan Artikel Ini:</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://gemilangkatun.com/artikel4.html" target="_blank" rel="noopener" class="btn-share btn-share-fb"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=https://gemilangkatun.com/artikel4.html" target="_blank" rel="noopener" class="btn-share btn-share-tw"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a>
+                <a href="https://api.whatsapp.com/send?text=https://gemilangkatun.com/artikel4.html" target="_blank" rel="noopener" class="btn-share btn-share-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn-share btn-share-ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+              </div>
+            </div>
           </article>
 
           <div class="wa-cta-box">
@@ -326,10 +405,10 @@
           </div>
 
           <div class="author-box d-flex align-items-start gap-3">
-            <div class="author-avatar">G</div>
+            <div class="author-avatar">W</div>
             <div>
-              <p class="fw-black mb-1" style="font-size:0.9rem;">Gemilang Katun Outbound</p>
-              <p class="text-secondary small mb-0" style="line-height:1.6;">Tim profesional outbound, gathering, dan event organizer terpercaya di Malang &amp; Batu, Jawa Timur. Berpengalaman lebih dari 12 tahun melayani ribuan peserta dari berbagai kalangan.</p>
+              <p class="fw-black mb-1" style="font-size:0.9rem;">Wildan</p>
+              <p class="text-secondary small mb-0" style="line-height:1.6;">Fasilitator senior &amp; motivator bersertifikasi di Gemilang Katun Outbound. Berpengalaman lebih dari 8 tahun memfasilitasi program spiritual building, leadership training, dan pengembangan diri di kawasan Malang &amp; Batu, Jawa Timur.</p>
             </div>
           </div>
 
@@ -429,6 +508,21 @@
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('show', window.scrollY > 300); });
     scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    function toggleTOC() {
+      const list = document.getElementById('tocList');
+      const chevron = document.getElementById('tocChevron');
+      const isOpen = list.style.display !== 'none';
+      list.style.display = isOpen ? 'none' : 'block';
+      chevron.classList.toggle('rotated', isOpen);
+    }
+    function toggleFAQ(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotated'));
+      if (!isOpen) { answer.classList.add('open'); icon.classList.add('rotated'); }
+    }
   </script>
 </body>
 </html>
