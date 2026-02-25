@@ -46,6 +46,8 @@
   <meta name="msapplication-TileImage" content="https://gemilangkatun.com/image1.png" />
 
   <!-- ===================== PERFORMANCE ===================== -->
+  <!-- Preload LCP hero image -->
+  <link rel="preload" as="image" href="image/13.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -147,14 +149,17 @@
     /* === BLOG HERO with background image === */
     .blog-hero {
       min-height: 440px;
-      background:
-        linear-gradient(to bottom, rgba(16,34,22,0.80) 0%, rgba(16,34,22,0.65) 100%),
-        url('image/13.webp') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
       display: flex;
       align-items: center;
       padding-top: 80px;
       padding-bottom: 0;
     }
+    .blog-hero-bg { position: absolute; inset: 0; overflow: hidden; }
+    .blog-hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .blog-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(16,34,22,0.80) 0%, rgba(16,34,22,0.65) 100%); pointer-events: none; }
+    .blog-hero > .container { position: relative; z-index: 1; }
     .blog-hero-inner {
       text-align: center;
       width: 100%;
@@ -445,6 +450,11 @@
        BLOG HERO — with background image + centered search
   ============================================================= -->
   <header class="blog-hero">
+    <!-- LCP image: <img> agar terdeteksi PageSpeed -->
+    <div class="blog-hero-bg" aria-hidden="true">
+      <img src="image/13.webp" alt="" width="1400" height="560" fetchpriority="high" decoding="sync" style="display:block;" />
+    </div>
+    <div class="blog-hero-overlay"></div>
     <div class="container">
       <div class="blog-hero-inner">
         <span class="blog-hero-label">

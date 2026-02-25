@@ -69,12 +69,16 @@
     .navbar-custom .navbar-toggler { border-color:rgba(255,255,255,0.3); }
     .navbar-custom .navbar-toggler-icon { filter:invert(1); }
 
-    /* Article Hero */
     .article-hero {
       min-height:420px; display:flex; align-items:flex-end; padding-bottom:40px;
-      position:relative; overflow:hidden;
-      background: linear-gradient(to bottom, rgba(16,34,22,0.55) 0%, rgba(16,34,22,0.85) 100%),
-        url('image/15.webp') center/cover no-repeat;
+      position:relative; overflow:hidden; padding-top: 72px;
+    }
+    .article-hero-bg {
+      position:absolute; inset:0; overflow:hidden;
+    }
+    .article-hero-bg img {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:center;
     }
     .article-badge { display:inline-block; background:rgba(19,236,91,0.15); border:1px solid rgba(19,236,91,0.4); color:var(--primary); font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; padding:4px 14px; border-radius:999px; margin-bottom:14px; }
     .breadcrumb-item+.breadcrumb-item::before { color:rgba(255,255,255,0.4); }
@@ -209,7 +213,13 @@
 
   <!-- ARTICLE HERO -->
   <div class="article-hero" style="padding-top:72px;">
-    <div class="container">
+    <!-- LCP image: gunakan <img> bukan CSS background agar dideteksi PageSpeed -->
+    <div class="article-hero-bg" aria-hidden="true">
+      <img src="image/15.webp" alt="" width="1400" height="560" fetchpriority="high" decoding="sync" style="display:block;" />
+    </div>
+    <!-- Gradient overlay -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(16,34,22,0.55) 0%, rgba(16,34,22,0.85) 100%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
       <nav aria-label="breadcrumb" class="mb-3">
         <ol class="breadcrumb mb-0" style="font-size:0.78rem;">
           <li class="breadcrumb-item"><a href="index.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Home</a></li>

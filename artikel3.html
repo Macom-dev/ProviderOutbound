@@ -175,7 +175,9 @@
     .navbar-custom .navbar-toggler-icon { filter: invert(1); }
     .btn-book-now { background: var(--primary); color: var(--bg-dark); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; border: none; transition: background 0.2s; }
     .btn-book-now:hover { background: var(--primary-dark); color: var(--bg-dark); }
-    .article-hero { min-height: 480px; background: url('image/16.webp') center/cover no-repeat; position: relative; display: flex; align-items: flex-end; padding-top: 72px; }
+    .article-hero { min-height: 480px; position: relative; display: flex; align-items: flex-end; padding-top: 72px; overflow: hidden; }
+    .article-hero-bg { position: absolute; inset: 0; overflow: hidden; }
+    .article-hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,34,22,0.92) 0%, rgba(16,34,22,0.45) 60%, rgba(16,34,22,0.15) 100%); }
     .article-hero-content { position: relative; z-index: 1; padding: 3rem 0 2.5rem; }
     .article-badge { display: inline-block; background: rgba(19,236,91,0.15); border: 1px solid rgba(19,236,91,0.35); color: var(--primary); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 14px; border-radius: 999px; margin-bottom: 16px; }
@@ -302,6 +304,10 @@
   </nav>
 
   <div class="article-hero">
+    <!-- LCP image: <img> agar terdeteksi PageSpeed -->
+    <div class="article-hero-bg" aria-hidden="true">
+      <img src="image/16.webp" alt="" width="1400" height="560" fetchpriority="high" decoding="sync" style="display:block;" />
+    </div>
     <div class="article-hero-overlay"></div>
     <div class="container article-hero-content">
       <nav aria-label="breadcrumb" class="mb-3">
