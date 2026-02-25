@@ -27,13 +27,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <!-- Preload hero image (LCP) -->
+  <link rel="preload" as="image" href="image/15.webp" fetchpriority="high" />
+  <!-- Google Fonts — non-blocking -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap" /></noscript>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"EO Gathering Reuni Sekolah di Malang — Nostalgia Masa Putih Abu-Abu","url":"https://gemilangkatun.com/artikel1.html","datePublished":"2026-02-21T08:00:00+07:00","author":{"@type":"Organization","name":"Gemilang Katun Outbound"},"publisher":{"@type":"Organization","name":"Gemilang Katun Outbound","logo":{"@type":"ImageObject","url":"https://gemilangkatun.com/image1.png"}},"inLanguage":"id-ID"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gemilangkatun.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gemilangkatun.com/blog.html"},{"@type":"ListItem","position":3,"name":"EO Gathering Reuni Sekolah di Malang","item":"https://gemilangkatun.com/artikel1.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Berapa biaya EO gathering reuni sekolah di Malang?","acceptedAnswer":{"@type":"Answer","text":"Biaya EO gathering reuni sekolah di Malang tergantung jumlah peserta, lokasi, dan paket layanan. Hubungi Gemilang Katun Outbound di 0822-1122-1909 untuk penawaran harga terbaik."}},{"@type":"Question","name":"Dimana lokasi reuni terbaik di Malang?","acceptedAnswer":{"@type":"Answer","text":"Lokasi reuni terbaik di Malang antara lain Taman Rekreasi Selecta, Sengkaling, dan kawasan Batu. Gemilang Katun Outbound membantu memilihkan lokasi sesuai kebutuhan Anda."}}]}]}
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <!-- Font Awesome — non-blocking -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <style>
     :root { --primary:#13ec5b; --primary-dark:#0fc44c; --bg-dark:#102216; --bg-light:#f6f8f6; }
     html { scroll-behavior:smooth; overflow-x:hidden; }
