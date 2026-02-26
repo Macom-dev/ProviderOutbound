@@ -730,66 +730,61 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
   <script>
-    // === Scroll-to-Top ===
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      scrollTopBtn.classList.toggle('show', window.scrollY > 300);
-    });
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // === Search Filter ===
-    const searchInput = document.getElementById('blogSearchInput');
-    const searchBtn = document.getElementById('blogSearchBtn');
-    const searchNotice = document.getElementById('searchNotice');
-    const searchKeyword = document.getElementById('searchKeyword');
-    const noResults = document.getElementById('noResults');
-    const articles = document.querySelectorAll('.blog-article-item');
-
-    function doSearch() {
-      const q = searchInput.value.trim().toLowerCase();
-      let visible = 0;
-
-      articles.forEach(item => {
-        const title = item.getAttribute('data-title') || '';
-        const cat = item.getAttribute('data-category') || '';
-        const match = !q || title.includes(q) || cat.includes(q);
-        item.style.display = match ? '' : 'none';
-        if (match) visible++;
-      });
-
-      if (q) {
-        searchNotice.style.display = 'block';
-        searchKeyword.textContent = '"' + searchInput.value.trim() + '"';
-      } else {
-        searchNotice.style.display = 'none';
+    document.addEventListener('DOMContentLoaded', function() {
+      // === Scroll-to-Top ===
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+          scrollTopBtn.classList.toggle('show', window.scrollY > 300);
+        }, { passive: true });
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
       }
-      noResults.style.display = visible === 0 ? 'block' : 'none';
-    }
 
-    searchBtn.addEventListener('click', doSearch);
-    searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+      // === Search Filter ===
+      const searchInput = document.getElementById('blogSearchInput');
+      const searchBtn = document.getElementById('blogSearchBtn');
+      const searchNotice = document.getElementById('searchNotice');
+      const searchKeyword = document.getElementById('searchKeyword');
+      const noResults = document.getElementById('noResults');
+      const articles = document.querySelectorAll('.blog-article-item');
 
-    // === Category Filter ===
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-
+      function doSearch() {
+        const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        let visible = 0;
         articles.forEach(item => {
-          if (filter === 'all' || item.getAttribute('data-category') === filter) {
-            item.style.display = '';
-          } else {
-            item.style.display = 'none';
-          }
+          const title = item.getAttribute('data-title') || '';
+          const cat = item.getAttribute('data-category') || '';
+          const match = !q || title.includes(q) || cat.includes(q);
+          item.style.display = match ? '' : 'none';
+          if (match) visible++;
         });
+        if (q && searchNotice) {
+          searchNotice.style.display = 'block';
+          if (searchKeyword) searchKeyword.textContent = '"' + searchInput.value.trim() + '"';
+        } else if (searchNotice) {
+          searchNotice.style.display = 'none';
+        }
+        if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+      }
 
-        // Reset search
-        searchInput.value = '';
-        searchNotice.style.display = 'none';
-        const visibleCount = [...articles].filter(i => i.style.display !== 'none').length;
-        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      if (searchBtn) searchBtn.addEventListener('click', doSearch);
+      if (searchInput) searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+
+      // === Category Filter ===
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          articles.forEach(item => {
+            item.style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? '' : 'none';
+          });
+          if (searchInput) searchInput.value = '';
+          if (searchNotice) searchNotice.style.display = 'none';
+          const visibleCount = [...articles].filter(i => i.style.display !== 'none').length;
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        });
       });
     });
   </script>

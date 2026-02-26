@@ -575,35 +575,31 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script>
-    // Scroll to top
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      scrollTopBtn.classList.toggle('show', window.scrollY > 300);
-    });
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // TOC toggle
-    function toggleTOC() {
-      const list = document.getElementById('tocList');
-      const chevron = document.getElementById('tocChevron');
-      const isOpen = list.style.display !== 'none';
-      list.style.display = isOpen ? 'none' : 'block';
-      chevron.classList.toggle('rotated', isOpen);
-    }
-
-    // FAQ toggle
-    function toggleFAQ(btn) {
-      const answer = btn.nextElementSibling;
-      const icon = btn.querySelector('.faq-icon');
-      const isOpen = answer.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotated'));
-      if (!isOpen) {
-        answer.classList.add('open');
-        icon.classList.add('rotated');
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('show', window.scrollY > 300); }, { passive: true });
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
       }
-    }
+      function toggleTOC() {
+        const list = document.getElementById('tocList');
+        const chevron = document.getElementById('tocChevron');
+        if (!list || !chevron) return;
+        const isOpen = list.style.display !== 'none';
+        list.style.display = isOpen ? 'none' : 'block';
+        chevron.classList.toggle('rotated', isOpen);
+      }
+      function toggleFAQ(btn) {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotated'));
+        if (!isOpen) { answer.classList.add('open'); if(icon) icon.classList.add('rotated'); }
+      }
+      window.toggleTOC = toggleTOC;
+      window.toggleFAQ = toggleFAQ;
+    });
   </script>
 </body>
 </html>

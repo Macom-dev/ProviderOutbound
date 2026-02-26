@@ -819,6 +819,8 @@
                 src="image/5.webp"
                 alt="Tim Gemilang Katun Outbound — profesional team building Malang Batu"
                 class="img-fluid w-100"
+                width="800"
+                height="450"
                 loading="lazy"
                 decoding="async"
                 style="aspect-ratio:16/9; object-fit:cover;"
@@ -1182,53 +1184,48 @@
     </a>
   </div>
 
-  <!-- =============================================
-       Bootstrap 5 JS Bundle (includes Popper)
-  ============================================== -->
+  <!-- Bootstrap 5 JS Bundle (includes Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-  <!-- =============================================
-       Custom JavaScript
-  ============================================== -->
+  <!-- Custom JavaScript — defer execution until DOM ready -->
   <script>
-    // === Scroll-to-Top button visibility ===
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      // Show button only after scrolling 300px down
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.add('show');
-      } else {
-        scrollTopBtn.classList.remove('show');
+    document.addEventListener('DOMContentLoaded', function() {
+      // === Scroll-to-Top button visibility ===
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+          scrollTopBtn.classList.toggle('show', window.scrollY > 300);
+        }, { passive: true });
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       }
-    });
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
 
-    // === Navbar active link highlight on scroll ===
-    const sections = document.querySelectorAll('section[id], footer[id]');
-    const navLinks = document.querySelectorAll('.navbar-custom .nav-link');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + entry.target.id) {
-              link.classList.add('active');
+      // === Navbar active link highlight on scroll ===
+      const sections = document.querySelectorAll('section[id], footer[id]');
+      const navLinks = document.querySelectorAll('.navbar-custom .nav-link');
+      if (sections.length && navLinks.length) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + entry.target.id) {
+                  link.classList.add('active');
+                }
+              });
             }
           });
-        }
-      });
-    }, { threshold: 0.4 });
-    sections.forEach(section => observer.observe(section));
+        }, { threshold: 0.4 });
+        sections.forEach(section => observer.observe(section));
+      }
 
-    // === Navbar shrink on scroll ===
-    window.addEventListener('scroll', () => {
+      // === Navbar shrink on scroll ===
       const navbar = document.querySelector('.navbar-custom');
-      if (window.scrollY > 60) {
-        navbar.style.padding = '8px 0';
-      } else {
-        navbar.style.padding = '';
+      if (navbar) {
+        window.addEventListener('scroll', () => {
+          navbar.style.padding = window.scrollY > 60 ? '8px 0' : '';
+        }, { passive: true });
       }
     });
   </script>
